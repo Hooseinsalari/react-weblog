@@ -13,7 +13,7 @@ import theme from "./mui/theme";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://api-eu-west-2.hygraph.com/v2/cl8u9iglf5ea501t8adk19frs/master",
+  uri: process.env.REACT_APP_GRAPHCMS_URI ,
   cache: new InMemoryCache(),
 });
 
