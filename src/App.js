@@ -1,7 +1,10 @@
+// components
+import Header from "./components/layout/Header";
+
 function App() {
   return (
     <div>
-      <h1>salam</h1>
+      <Header />
     </div>
   );
 }
