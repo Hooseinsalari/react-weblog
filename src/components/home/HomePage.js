@@ -10,7 +10,7 @@ import Authors from "../author/Authors";
 const HomePage = () => {
   return (
     <Container maxWidth="lg">
-      <Grid container padding={3}>
+      <Grid container padding={3} spacing={2}>
         <Grid item xs={12} md={2}>
           <Typography variant="h5" fontWeight="700" mb={3}>
             نویسنده ها
