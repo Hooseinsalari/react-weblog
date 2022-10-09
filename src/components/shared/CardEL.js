@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 // mui
 import {
   Avatar,
@@ -44,10 +46,10 @@ const CardEL = (props) => {
       </CardContent>
       <Divider variant="middle" sx={{ margin: "10px", marginTop: "0px" }} />
       <CardActions>
-        {/* <Link
+        <Link
           to={`/blogs/${props.slug}`}
           style={{ textDecoration: "none", width: "100%" }}
-        > */}
+        >
           <Button
             variant="outlined"
             size="medium"
@@ -55,7 +57,7 @@ const CardEL = (props) => {
           >
             مطالعه مقاله
           </Button>
-        {/* </Link> */}
+        </Link>
       </CardActions>
     </Card>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // GraphQl
 import { useQuery } from "@apollo/client";
@@ -26,8 +27,8 @@ const Authors = () => {
       {data.authors.map((author, index) => (
         <React.Fragment key={author.id}>
           <Grid item xs={12} padding={2} px={1}>
-            <a
-              href="#"
+            <Link
+              to={`/authors/${author.slug}`}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -47,7 +48,7 @@ const Authors = () => {
               >
                 {author.name}
               </Typography>
-            </a>
+            </Link>
           </Grid>
           {index !== data.authors.length - 1 && (
             <Grid item xs={12}>
