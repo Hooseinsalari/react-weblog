@@ -6,8 +6,13 @@ import { useQuery } from "@apollo/client";
 import { GET_AUTHOR_INFO } from "../../graphql/queries";
 
 // mui
-import { Avatar, Grid, Typography } from "@mui/material";
-import { Container } from "@mui/system";
+import {
+  Avatar,
+  Grid,
+  Typography,
+  Container,
+  CircularProgress,
+} from "@mui/material";
 
 // sanitize
 import sanitizeHtml from "sanitize-html";
@@ -19,7 +24,19 @@ const AuthorPage = () => {
     variables: { slug },
   });
 
-  if (loading) return <h3>loading</h3>;
+  if (loading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "center",
+          height: "1000px",
+        }}
+      >
+        <CircularProgress size={120} sx={{ marginTop: 8 }} />
+      </div>
+    );
 
   if (errors) return <h3>errors</h3>;
 

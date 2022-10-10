@@ -6,13 +6,18 @@ import { useQuery } from "@apollo/client";
 import { GET_AUTHORS_INFO } from "../../graphql/queries";
 
 // mui
-import { Avatar, Grid, Typography } from "@mui/material";
+import { Avatar, CircularProgress, Grid, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 
 const Authors = () => {
   const { loading, data, errors } = useQuery(GET_AUTHORS_INFO);
-  console.log({ loading, data, errors });
-  if (loading) return <h3>Loading...</h3>;
+
+  if (loading)
+    return (
+      <div>
+        <CircularProgress size={80} sx={{ marginTop: 8 }} />
+      </div>
+    );
 
   if (errors) return <h3>Errors...</h3>;
 

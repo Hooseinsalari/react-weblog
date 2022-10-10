@@ -1,7 +1,7 @@
 import React from "react";
 
 // mui
-import { Grid } from "@mui/material";
+import { CircularProgress, Grid } from "@mui/material";
 
 // GraphQl
 import { useQuery } from "@apollo/client";
@@ -13,9 +13,19 @@ import CardEL from "../shared/CardEL";
 const Blogs = () => {
   const { loading, data, errors } = useQuery(GET_POSTS_INFO);
 
-  console.log({ loading, data, errors });
-
-  if (loading) return <h3>Loading...</h3>;
+  if (loading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "center",
+          height: "1000px",
+        }}
+      >
+        <CircularProgress size={120} sx={{ marginTop: 8 }} />
+      </div>
+    );
 
   if (errors) return <h1>errors...</h1>;
 
