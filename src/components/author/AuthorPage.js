@@ -16,6 +16,8 @@ import {
 
 // sanitize
 import sanitizeHtml from "sanitize-html";
+
+// component
 import CardEL from "../shared/CardEL";
 
 const AuthorPage = () => {
