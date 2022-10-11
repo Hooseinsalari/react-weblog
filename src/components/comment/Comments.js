@@ -9,7 +9,7 @@ import { Avatar, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 const Comments = ({ slug }) => {
-  const { loading, data, errors } = useQuery(GET_POST_COMMENTS, {
+  const { loading, data } = useQuery(GET_POST_COMMENTS, {
     variables: {
       slug,
     },

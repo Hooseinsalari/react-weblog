@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+// toastify
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // GraphQl
 import { useMutation } from "@apollo/client";
 import { SEND__COMMENT } from "../../graphql/mutations";
@@ -9,10 +13,6 @@ import { Grid, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-// toastify
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 const CommentForm = ({ slug }) => {
   const [values, setValues] = useState({
     name: "",
@@ -20,7 +20,7 @@ const CommentForm = ({ slug }) => {
     text: "",
   });
 
-  const [sendComment, { loading, data }] = useMutation(SEND__COMMENT, {
+  const [sendComment, { loading }] = useMutation(SEND__COMMENT, {
     variables: {
       name: values.name,
       email: values.email,
@@ -90,7 +90,7 @@ const CommentForm = ({ slug }) => {
         />
       </Grid>
 
-      <Grid item xs={12}>
+      <Grid item xs={12} dir="rtl">
         <TextField
           value={values.text}
           label="نظر"
@@ -100,16 +100,16 @@ const CommentForm = ({ slug }) => {
           multiline
           minRows={4}
           onChange={inputHandler}
-        />
+          />
       </Grid>
 
       <Grid item xs={12}>
         {loading ? (
-          <Button variant="contained" disabled sx={{ mt: 1, fontSize: 15 }}>
+            <Button variant="contained" disabled sx={{ mt: 1, fontSize: 15 }}>
             در حال ارسال
           </Button>
         ) : (
-          <Button
+            <Button
             onClick={sendHandler}
             variant="contained"
             sx={{ mt: 1, fontSize: 15 }}
