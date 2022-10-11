@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+// component
+import CommentForm from "../comment/CommentForm";
+
 // GraphQl
 import { useQuery } from "@apollo/client";
 import { GET_POST_INFO } from "../../graphql/queries";
@@ -99,6 +102,10 @@ const BlogPage = () => {
               __html: sanitizeHtml(post.content.html),
             }}
           ></div>
+        </Grid>
+
+        <Grid item xs={12}>
+          <CommentForm slug={slug} />
         </Grid>
       </Grid>
     </Container>
