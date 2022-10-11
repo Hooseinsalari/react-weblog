@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 // component
 import CommentForm from "../comment/CommentForm";
+import Comments from "../comment/Comments";
 
 // GraphQl
 import { useQuery } from "@apollo/client";
@@ -106,6 +107,10 @@ const BlogPage = () => {
 
         <Grid item xs={12}>
           <CommentForm slug={slug} />
+        </Grid>
+
+        <Grid item xs={12}>
+          <Comments slug={slug} />
         </Grid>
       </Grid>
     </Container>

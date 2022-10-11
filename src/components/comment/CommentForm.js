@@ -37,6 +37,10 @@ const CommentForm = ({ slug }) => {
     if (values.name && /\S+@\S+\.\S+/.test(values.email) && values.text) {
       sendComment();
 
+      toast.success("نظر شما با موفقیت ثبت شد و پس از بازبینی منتشر خواهد شد", {
+        position: "top-center",
+      });
+
       setValues({
         name: "",
         email: "",
@@ -48,12 +52,6 @@ const CommentForm = ({ slug }) => {
       });
     }
   };
-
-  if (data) {
-    toast.success("نظر شما با موفقیت ثبت شد و پس از بازبینی منتشر خواهد شد", {
-      position: "top-center",
-    });
-  }
 
   return (
     <Grid
