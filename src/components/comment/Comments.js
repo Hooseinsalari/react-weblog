@@ -15,7 +15,7 @@ const Comments = ({ slug }) => {
     },
   });
 
-  if(loading) return null
+  if (loading) return null;
 
   return (
     <Grid
@@ -32,18 +32,28 @@ const Comments = ({ slug }) => {
           نظرات
         </Typography>
 
-        {
-          data.comments.map((comment) => (
-            <Grid item xs={12} key={comment.id} my={2} p={2} border="1px solid silver" borderRadius={2} >
-                <Box component="div" display="flex" alignItems="center">
-                    <Avatar>{comment.name[0]}</Avatar>
-                    <Typography component="span" variant="p" fontWeight={500} mr={2}>{comment.name}</Typography>
-                </Box>
+        {data.comments.map((comment) => (
+          <Grid
+            item
+            xs={12}
+            key={comment.id}
+            my={2}
+            p={2}
+            border="1px solid silver"
+            borderRadius={2}
+          >
+            <Box component="div" display="flex" alignItems="center">
+              <Avatar>{comment.name[0]}</Avatar>
+              <Typography component="span" variant="p" fontWeight={500} ml={1}>
+                {comment.name}
+              </Typography>
+            </Box>
 
-                <Typography component="p" variant="p" mt={3} fontWeight={500}>{comment.text}</Typography>
-            </Grid>
-          ))
-        }
+            <Typography component="p" variant="p" mt={3} fontWeight={500}>
+              {comment.text}
+            </Typography>
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );

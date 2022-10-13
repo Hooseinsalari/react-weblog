@@ -100,16 +100,16 @@ const CommentForm = ({ slug }) => {
           multiline
           minRows={4}
           onChange={inputHandler}
-          />
+        />
       </Grid>
 
       <Grid item xs={12}>
         {loading ? (
-            <Button variant="contained" disabled sx={{ mt: 1, fontSize: 15 }}>
+          <Button variant="contained" disabled sx={{ mt: 1, fontSize: 15 }}>
             در حال ارسال
           </Button>
         ) : (
-            <Button
+          <Button
             onClick={sendHandler}
             variant="contained"
             sx={{ mt: 1, fontSize: 15 }}

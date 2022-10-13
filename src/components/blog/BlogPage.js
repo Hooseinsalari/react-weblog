@@ -24,8 +24,6 @@ const BlogPage = () => {
   });
   const navigate = useNavigate();
 
-  console.log({ loading, data, errors });
-
   if (loading)
     return (
       <div
@@ -52,9 +50,9 @@ const BlogPage = () => {
             component="h2"
             variant="h5"
             color="primary"
-            sx={{fontSize: {xs: 20, sm: 25}}}
+            sx={{ fontSize: { xs: 20, sm: 25 } }}
             fontWeight={700}
-            ml={8}
+            mr={8}
           >
             {post.title}
           </Typography>
@@ -81,7 +79,11 @@ const BlogPage = () => {
           <Avatar
             src={post.author.avatar.url}
             alt={post.author.id}
-            sx={{ width: {xs: 60, sm: 80}, height: {xs: 60, sm: 80}, marginLeft: 2 }}
+            sx={{
+              width: { xs: 60, sm: 80 },
+              height: { xs: 60, sm: 80 },
+              marginRight: 2,
+            }}
           />
           <Box component="div">
             <Typography component="p" variant="h6" fontWeight={700}>
@@ -92,7 +94,9 @@ const BlogPage = () => {
               variant="p"
               color="text.secondary"
               fontWeight={600}
-            >{post.author.position}</Typography>
+            >
+              {post.author.position}
+            </Typography>
           </Box>
         </Grid>
 

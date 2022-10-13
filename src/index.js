@@ -11,6 +11,10 @@ import "./styles/fonts.css";
 import { ThemeProvider } from "@mui/material";
 import theme from "./mui/theme";
 
+// mui rtl
+import { CacheProvider } from "@emotion/react";
+import cacheRtl from "./mui/cache";
+
 // apollo
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
@@ -21,11 +25,13 @@ const client = new ApolloClient({
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ApolloProvider client={client}>
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
-    </BrowserRouter>
-  </ApolloProvider>
+  <CacheProvider value={cacheRtl}>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </BrowserRouter>
+      </ApolloProvider>
+  </CacheProvider>
 );

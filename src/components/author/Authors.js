@@ -15,7 +15,7 @@ const Authors = () => {
   if (loading)
     return (
       <div>
-        <CircularProgress size={80} sx={{ marginTop: 8 }} />
+        <CircularProgress size={80} sx={{ marginTop: { xs: 2, md: 8 } }} />
       </div>
     );
 
@@ -43,13 +43,13 @@ const Authors = () => {
               <Avatar
                 alt={author.slug}
                 src={author.avatar.url}
-                sx={{ marginLeft: 1 }}
+                sx={{ marginRight: 1 }}
               />
               <Typography
                 component="p"
                 variant="p"
                 color="text.secondary"
-                sx={{ fontWeight: 800, fontSize: "0.9rem" }}
+                sx={{ fontWeight: 700, fontSize: "0.93rem" }}
               >
                 {author.name}
               </Typography>

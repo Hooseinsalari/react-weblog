@@ -14,14 +14,12 @@ import {
   Typography,
 } from "@mui/material";
 
-const CardEL = ({author, coverPhoto, slug, title}) => {
+const CardEL = ({ author, coverPhoto, slug, title }) => {
   return (
     <Card sx={{ boxShadow: "rgba(0,0,0,0.2) 0 4px 12px", borderRadius: 4 }}>
       {author && (
         <CardHeader
-          avatar={
-            <Avatar alt={author.slug} src={author.avatar.url} />
-          }
+          avatar={<Avatar alt={author.slug} src={author.avatar.url} />}
           title={
             <Typography
               component="p"
@@ -29,7 +27,6 @@ const CardEL = ({author, coverPhoto, slug, title}) => {
               color="text.secondary"
               sx={{
                 fontWeight: "700",
-                marginRight: "10px",
                 fontSize: "0.95rem",
               }}
             >
@@ -38,12 +35,7 @@ const CardEL = ({author, coverPhoto, slug, title}) => {
           }
         />
       )}
-      <CardMedia
-        component="img"
-        src={coverPhoto.url}
-        alt={slug}
-        height="200"
-      />
+      <CardMedia component="img" src={coverPhoto.url} alt={slug} height="200" />
       <CardContent sx={{ height: "3rem" }}>
         <Typography color="text.primary" fontWeight={600}>
           {title}
